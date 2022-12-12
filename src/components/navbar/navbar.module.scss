@@ -1,0 +1,148 @@
+.navbar {
+   position: sticky;
+   top: 0;
+   left: 0;
+   box-shadow: 0px 4px 12px rgba(207, 207, 207, 0.25);
+   z-index: 999999;
+   background-color: #fff;
+}
+
+.container {
+   padding: 25px 10px;
+   max-width: 1110px;
+   margin-right: auto;
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   @media only screen and (max-width: 1020px) {
+      max-width: 720px;
+   }
+}
+
+ul {
+   list-style: none;
+}
+
+.logo {
+   max-width: 100%;
+}
+
+.content,
+.navigations,
+.socials {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.content {
+   gap: 35px;
+   color: #70737c;
+   @media only screen and (max-width: 1020px) {
+      margin-top: 78px;
+      padding: 10px;
+      position: fixed;
+      flex-direction: column;
+      justify-content: center;
+      height: calc(100% - 82px);
+      top: 0;
+      right: 0;
+      background-color: #fff;
+      z-index: initial;
+      z-index: -1;
+      box-shadow: inset -10px 0px 12px rgba(207, 207, 207, 0.25);
+      transition: 0.5s;
+      transform: translateX(100%);
+   }
+}
+.openNav {
+   transform: translateX(0%) !important;
+}
+
+.navigations {
+   @media only screen and (max-width: 1020px) {
+      flex-direction: column;
+      gap: 20px;
+   }
+}
+
+.navigation {
+   &:not(:first-child) {
+      padding: 0 10px 0 10px;
+      border-left: 1px solid #9d9d9d;
+   }
+   &:first-child {
+      padding-right: 10px;
+   }
+   cursor: pointer;
+
+   @media only screen and (max-width: 1020px) {
+      border-left: none !important;
+   }
+}
+
+.socials {
+   gap: 5px;
+}
+
+.social {
+   cursor: pointer;
+}
+
+.form {
+   display: flex;
+   gap: 5px;
+   padding: 10px;
+   border: #9d9d9d 1px solid;
+   border-radius: 25px;
+}
+.form-btn {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+.form-input {
+   border: none;
+   outline: none;
+}
+
+.nav__btn {
+   background-color: transparent;
+}
+
+.btns {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+
+   button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+   }
+   @media only screen and (max-width: 1020px) {
+      gap: 20px;
+   }
+}
+
+.burgerBtn {
+   display: none;
+
+   @media only screen and (max-width: 1020px) {
+      display: block;
+   }
+}
+
+.overlay {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   background: rgba(255, 255, 255, 0.2);
+   backdrop-filter: blur(2px);
+}
