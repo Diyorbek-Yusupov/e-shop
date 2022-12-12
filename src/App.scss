@@ -1,0 +1,21 @@
+@font-face {
+   font-family: Lexend;
+   src: url(../public/assets/fonts/Lexend-Regular.ttf);
+}
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Lexend;
+}
+
+.container {
+   padding: 25px 10px;
+   max-width: 1110px;
+   margin-right: auto;
+   margin-left: auto;
+
+   @media only screen and (max-width: 1020px) {
+      max-width: 720px;
+   }
+}

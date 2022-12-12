@@ -1,11 +1,15 @@
 import React from "react";
-import "./App.css";
+import styles from "./App.scss";
 import Navbar from "./components/navbar/Navbar";
+import Showcase from "./components/showcase/Showcase";
 
 function App() {
    return (
       <div className="App">
          <Navbar />
+         <div className="container">
+            <Showcase />
+         </div>
       </div>
    );
 }
