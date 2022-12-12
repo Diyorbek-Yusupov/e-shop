@@ -1,0 +1,62 @@
+@font-face {
+   font-family: Lexend;
+   src: url(../public/assets/fonts/Lexend-Regular.ttf);
+}
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Lexend;
+}
+
+.container {
+   padding: 25px 10px;
+   max-width: 1110px;
+   margin-right: auto;
+   margin-left: auto;
+
+   @media only screen and (max-width: 1020px) {
+      max-width: 720px;
+   }
+}
+
+.titleWrapper {
+   margin: 45px 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   row-gap: 10px;
+}
+
+.categories {
+   display: flex;
+   gap: 16px;
+   align-items: center;
+   overflow-x: auto;
+   scrollbar-color: rebeccapurple green;
+   scrollbar-width: thin;
+   padding-bottom: 5px;
+
+   &::-webkit-scrollbar {
+      height: 10px;
+      border-radius: 5px;
+   }
+
+   /* Track */
+   &::-webkit-scrollbar-track {
+      background: rgb(212, 212, 212);
+      border-radius: 10px;
+   }
+
+   /* Handle */
+   &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+   }
+
+   /* Handle on hover */
+   &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+   }
+}

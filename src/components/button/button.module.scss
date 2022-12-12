@@ -13,9 +13,17 @@
 .light {
    background-color: #fff;
    color: #359740;
+   border: 1px solid #efefef;
 }
 
 .green {
    background-color: #359740;
    color: #fff;
+   border: 1px solid #359740;
+}
+
+.category {
+   display: flex;
+   align-items: center;
+   gap: 12px;
 }
