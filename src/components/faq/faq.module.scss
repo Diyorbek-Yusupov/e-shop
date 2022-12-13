@@ -1,0 +1,65 @@
+.quiz {
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 28px;
+   color: #1f2533;
+   padding: 0 29px;
+}
+
+.wrapper {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   gap: 40px;
+
+   @media only screen and (max-width: 1020px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+   }
+
+   @media only screen and (max-width: 720px) {
+      grid-template-columns: 1fr;
+   }
+}
+
+.form {
+   position: relative;
+   padding: 22px;
+   padding-top: 130px;
+   background: #eaf1eb;
+   border-radius: 12px;
+   max-height: 506px;
+}
+
+.formBg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+
+.formTitle {
+   font-weight: 600;
+   font-size: 24px;
+   line-height: 32px;
+   letter-spacing: -0.02em;
+   color: #1f2533;
+}
+
+.formText {
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 28px;
+   color: #1f2533;
+   margin-top: 5px;
+   margin-bottom: 17px;
+}
+
+.formInput {
+   width: 100%;
+   border: 1px solid #efefef;
+   border-radius: 8px;
+   resize: none;
+   padding: 16px;
+   outline: none;
+   margin-bottom: 13px;
+}

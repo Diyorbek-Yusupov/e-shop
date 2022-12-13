@@ -1,0 +1,52 @@
+.main {
+   overflow: hidden;
+   border: 1px solid #efefef;
+   border-radius: 8px;
+   margin-bottom: 20px;
+}
+
+.label-forFAQ {
+   position: relative;
+   background: #fff;
+   border-bottom: 1px solid #efefef;
+   z-index: 1;
+
+   &_text {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 25px;
+      letter-spacing: -0.04em;
+      color: #1f2533;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px 20px 20px;
+
+      &::after {
+         content: url("../../../public/assets/images/toggle-plus.svg");
+      }
+
+      &--open {
+         &::after {
+            transform: translateY(-7px);
+            content: url("../../../public/assets/images/toggle-minus.svg");
+         }
+      }
+   }
+}
+.content {
+   position: relative;
+   max-height: 0px;
+   overflow: hidden;
+   transition: all 0.5s;
+   transform: translateY(-100%);
+   opacity: 0;
+}
+
+.content--open {
+   max-height: 900px;
+   overflow: unset;
+   transform: translateY(0%);
+   opacity: 1;
+}

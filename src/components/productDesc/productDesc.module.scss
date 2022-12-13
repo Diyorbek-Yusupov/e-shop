@@ -1,0 +1,44 @@
+@mixin flexbox() {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.wrapper {
+   padding-top: 32px;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 65px;
+   border-top: 1px solid #efefef;
+   margin-bottom: 80px;
+
+   @media only screen and (max-width: 710px) {
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
+
+.description {
+   list-style: disc;
+}
+
+.descriptionItem {
+   margin-left: 18px;
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 28px;
+   color: #1f2533;
+}
+
+.address {
+   border: 1px solid #efefef;
+   border-radius: 12px;
+   padding: 24px;
+}
+
+.addressItem {
+   @include flexbox();
+   padding: 15px 0;
+   &:not(:first-child) {
+      border-top: 1px solid #efefef;
+   }
+}

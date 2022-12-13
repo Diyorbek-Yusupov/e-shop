@@ -1,5 +1,8 @@
 import React from "react";
 import DetailTable from "../../components/detailTable/DetailTable";
+import Faq from "../../components/faq/Faq";
+import ProductDesc from "../../components/productDesc/ProductDesc";
+import Title from "../../components/title/Title";
 import styles from "./details.module.scss";
 
 export default function Details() {
@@ -26,6 +29,10 @@ export default function Details() {
                   <DetailTable />
                </div>
             </div>
+            <Title mb={24}>Product information.</Title>
+            <ProductDesc />
+            <Title mb={23}>Frequently asked questions.</Title>
+            <Faq />
          </div>
       </>
    );
