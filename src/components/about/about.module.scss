@@ -3,6 +3,9 @@
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    gap: 60px;
+   @media only screen and (max-width: 1020px) {
+      grid-template-columns: repeat(1, 1fr);
+   }
 }
 
 .text {
