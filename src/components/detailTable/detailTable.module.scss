@@ -1,0 +1,108 @@
+@mixin flexbox() {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.optionTitle {
+   @include flexbox();
+   > div {
+      @include flexbox();
+      span {
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 178.19%;
+         text-align: center;
+         color: #70737c;
+      }
+
+      p {
+         font-weight: 500;
+         font-size: 16px;
+         line-height: 178.19%;
+         text-align: center;
+         letter-spacing: -0.035em;
+         color: #1f2533;
+         margin-left: 10px;
+      }
+   }
+}
+
+.optionBtns {
+   @include flexbox();
+   border: 1px solid #efefef;
+   border-radius: 11px;
+   padding: 6px;
+
+   button {
+      font-size: 25px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: #359740;
+      font-weight: 400;
+      width: 32px;
+      height: 32px;
+   }
+}
+
+.optionCount {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: rgba(53, 151, 64, 0.08);
+   border-radius: 6px;
+   width: 32px;
+   height: 32px;
+   font-size: 16px !important;
+   color: #359740 !important;
+}
+
+.optionItem {
+   margin-top: 15px;
+   @include flexbox();
+   padding: 15px;
+   border: 1px solid #4fa083;
+   border-radius: 8px;
+}
+
+.optionValue {
+   @include flexbox();
+   gap: 15px;
+   input {
+      transform: scale(1.4);
+   }
+}
+
+.optionPrice {
+   @include flexbox();
+   gap: 15px;
+}
+
+.bottom {
+   @include flexbox();
+   margin-top: 8px;
+}
+
+.likeBtn {
+   margin-right: 18px;
+   background-color: transparent;
+   cursor: pointer;
+   border: none;
+}
+
+.oldPrice {
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 178.19%;
+   letter-spacing: -0.035em;
+   color: #70737c;
+   text-decoration: line-through;
+}
+
+.currentPrice {
+   font-weight: 600;
+   font-size: 28px;
+   line-height: 38px;
+   color: #1f2533;
+}

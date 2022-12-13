@@ -1,0 +1,53 @@
+@mixin flexbox() {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.container {
+   padding: 25px 10px;
+   max-width: 1110px;
+   margin-right: auto;
+   margin-left: auto;
+
+   @media only screen and (max-width: 1020px) {
+      max-width: 720px;
+   }
+}
+
+.showcase {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 50px;
+
+   @media only screen and (max-width: 1020px) {
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
+
+.productImg {
+   display: block;
+   margin-right: auto;
+   margin-left: auto;
+   width: 100%;
+   max-width: 550px;
+}
+
+.productTitle {
+   font-weight: 600;
+   font-size: 24px;
+   line-height: 32px;
+   letter-spacing: -0.02em;
+   color: #1f2533;
+}
+
+.productType {
+   border: 1px solid #efefef;
+   border-radius: 119px;
+   padding: 8px 20px;
+   display: inline-flex;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 178.19%;
+   margin: 20px 0;
+}
