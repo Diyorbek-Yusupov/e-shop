@@ -56,6 +56,7 @@ export default function DetailTable() {
                <h4>$1,56</h4>
             </div>
          </div>
+
          <div className={styles.bottom}>
             <div className={styles.priceInfo}>
                <h3 className={styles.oldPrice}>$15.56</h3>
