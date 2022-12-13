@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./App.module.scss";
+import BlogBanner from "./components/blogBanner/BlogBanner";
 import Button from "./components/button/Button";
 import Card from "./components/card/Card";
 import Categories from "./components/categories/Categories";
@@ -27,6 +28,38 @@ function App() {
                <Card />
                <Card />
                <Card />
+            </div>
+            <div className={styles.titleWrapper}>
+               <Title>Our blog.</Title>
+               <Button bg={"light"}>Go to our blog</Button>
+            </div>
+            <div className={styles.blogBannerWrapper}>
+               <BlogBanner
+                  time={"12.09.2021"}
+                  title={"How to plant spinach correctly in winter"}
+                  desc={
+                     "In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
+                  }
+                  img={"./assets/images/blogBanner1.png"}
+               />
+               <BlogBanner
+                  time={"12.09.2021"}
+                  title={"How to plant spinach correctly in winter"}
+                  desc={
+                     "In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
+                  }
+                  img={"./assets/images/blogBanner2.png"}
+               />
+               <BlogBanner
+                  time={"12.09.2021"}
+                  title={"How to plant spinach correctly in winter"}
+                  img={"./assets/images/blogBanner3.png"}
+               />
+               <BlogBanner
+                  time={"12.09.2021"}
+                  title={"How to plant spinach correctly in winter"}
+                  img={"./assets/images/blogBanner3.png"}
+               />
             </div>
          </div>
       </div>
