@@ -10,6 +10,7 @@ import Slider from "./components/slider/Slider";
 import Sliders from "./components/slider/Sliders";
 import SubBanner from "./components/subBanner/SubBanner";
 import Title from "./components/title/Title";
+import About from "./components/about/About";
 
 function App() {
    return (
@@ -67,6 +68,7 @@ function App() {
                What out clients say
             </Title>
             <Sliders />
+            <About />
          </div>
       </div>
    );
