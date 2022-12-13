@@ -1,0 +1,97 @@
+.container {
+   padding: 25px 10px;
+   max-width: 1110px;
+   margin-right: auto;
+   margin-left: auto;
+
+   @media only screen and (max-width: 1020px) {
+      max-width: 720px;
+   }
+}
+
+.heading {
+   display: flex;
+   justify-content: space-between;
+   gap: 20px;
+   flex-grow: 1;
+   margin-bottom: 40px;
+
+   @media only screen and (max-width: 520px) {
+      flex-direction: column;
+   }
+}
+
+.searchGroup {
+   position: relative;
+   display: flex;
+   align-items: center;
+   padding: 0 25px;
+   height: 64px;
+   border: 1px solid #efefef;
+   border-radius: 71px;
+}
+
+.searchBtn {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+.searchInput {
+   height: 100%;
+   width: 100%;
+   border: none;
+   outline: none;
+}
+
+.searchText {
+   width: 100%;
+   gap: 10px;
+}
+
+.select {
+   flex-direction: column;
+   justify-content: center;
+   text-align: start;
+   min-width: 260px;
+   @media only screen and (max-width: 520px) {
+      width: 100%;
+   }
+}
+.selectLabel {
+   display: block;
+   width: 100%;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 178.19%;
+   color: #70737c;
+}
+
+.selectOption {
+   border: none;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 25px;
+   letter-spacing: -0.04em;
+   color: #1f2533;
+   display: block;
+   width: 100%;
+}
+
+.cardWrapper {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 30px;
+   margin-top: 40px;
+
+   @media only screen and (max-width: 1020px) {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   @media only screen and (max-width: 540px) {
+      max-width: 278px;
+      margin-right: auto;
+      margin-left: auto;
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
