@@ -1,0 +1,60 @@
+.wrapper {
+   border: 1px solid #efefef;
+   border-radius: 12px;
+   padding: 22px;
+}
+
+.heading {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   padding-bottom: 29px;
+   border-bottom: 1px solid #efefef;
+}
+
+.everageRate {
+   font-weight: 600;
+   font-size: 48px;
+   line-height: 54px;
+   color: #1f2533;
+}
+
+.reviews {
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 178.19%;
+   color: #70737c;
+   span {
+      display: block;
+   }
+}
+
+.iconRates {
+   display: flex;
+   gap: 5px;
+}
+
+.barRow {
+   display: grid;
+   grid-template-columns: 28px 28px auto 28px;
+   margin-top: 21px;
+   align-items: center;
+   gap: 5px;
+}
+
+.line {
+   position: relative;
+   height: 9px;
+   width: 100%;
+   background: #efefef;
+   border-radius: 35px;
+}
+
+.process {
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   background: #ffcf55;
+   border-radius: 35px;
+}
