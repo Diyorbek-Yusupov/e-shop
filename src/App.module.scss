@@ -55,6 +55,7 @@ a {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    gap: 30px;
+   margin-bottom: 80px;
 
    @media only screen and (max-width: 1020px) {
       grid-template-columns: repeat(2, 1fr);

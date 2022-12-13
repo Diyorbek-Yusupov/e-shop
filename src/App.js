@@ -6,6 +6,8 @@ import Card from "./components/card/Card";
 import Categories from "./components/categories/Categories";
 import Navbar from "./components/navbar/Navbar";
 import Showcase from "./components/showcase/Showcase";
+import Slider from "./components/slider/Slider";
+import Sliders from "./components/slider/Sliders";
 import SubBanner from "./components/subBanner/SubBanner";
 import Title from "./components/title/Title";
 
@@ -61,6 +63,10 @@ function App() {
                   img={"./assets/images/blogBanner3.png"}
                />
             </div>
+            <Title mb={44} align="center">
+               What out clients say
+            </Title>
+            <Sliders />
          </div>
       </div>
    );
