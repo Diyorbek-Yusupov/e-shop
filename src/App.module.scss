@@ -9,6 +9,10 @@
    font-family: Lexend;
 }
 
+a {
+   text-decoration: none;
+}
+
 .container {
    padding: 25px 10px;
    max-width: 1110px;
@@ -29,34 +33,20 @@
    row-gap: 10px;
 }
 
-.categories {
-   display: flex;
-   gap: 16px;
-   align-items: center;
-   overflow-x: auto;
-   scrollbar-color: rebeccapurple green;
-   scrollbar-width: thin;
-   padding-bottom: 5px;
+.cardWrapper {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 30px;
+   margin-top: 40px;
 
-   &::-webkit-scrollbar {
-      height: 10px;
-      border-radius: 5px;
+   @media only screen and (max-width: 1020px) {
+      grid-template-columns: repeat(2, 1fr);
    }
 
-   /* Track */
-   &::-webkit-scrollbar-track {
-      background: rgb(212, 212, 212);
-      border-radius: 10px;
-   }
-
-   /* Handle */
-   &::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 10px;
-   }
-
-   /* Handle on hover */
-   &::-webkit-scrollbar-thumb:hover {
-      background: #555;
+   @media only screen and (max-width: 540px) {
+      max-width: 278px;
+      margin-right: auto;
+      margin-left: auto;
+      grid-template-columns: repeat(1, 1fr);
    }
 }

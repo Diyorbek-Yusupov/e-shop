@@ -1,0 +1,31 @@
+.categories {
+   display: flex;
+   gap: 16px;
+   align-items: center;
+   overflow-x: auto;
+   scrollbar-color: rebeccapurple green;
+   scrollbar-width: thin;
+   padding-bottom: 5px;
+
+   &::-webkit-scrollbar {
+      height: 10px;
+      border-radius: 5px;
+   }
+
+   /* Track */
+   &::-webkit-scrollbar-track {
+      background: rgb(212, 212, 212);
+      border-radius: 10px;
+   }
+
+   /* Handle */
+   &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+   }
+
+   /* Handle on hover */
+   &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+   }
+}
