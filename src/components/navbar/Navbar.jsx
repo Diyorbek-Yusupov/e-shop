@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./navbar.module.scss";
 
 console.log(styles);
@@ -14,16 +15,18 @@ export default function Navbar() {
          )}
          <div className={styles.navbar}>
             <div className={styles.container}>
-               <a className={styles.logo} href="">
+               <Link to={"/"} className={styles.logo} href="">
                   <img src=".\assets\images\logo.svg" alt="" />
-               </a>
+               </Link>
                <ul
                   className={`${styles.content} ${
                      navIsOpen ? styles.openNav : ""
                   }`}
                >
                   <ul className={styles.navigations}>
-                     <li className={styles.navigation}>ALL PRODUCTS</li>
+                     <li className={styles.navigation}>
+                        <Link to={"/products"}>ALL PRODUCTS</Link>
+                     </li>
                      <li className={styles.navigation}>ABOUT SEEDRA</li>
                      <li className={styles.navigation}>OUR BLOG</li>
                      <li className={styles.navigation}>CONTACTS</li>
