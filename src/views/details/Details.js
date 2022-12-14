@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
 import Button from "../../components/button/Button";
 import Card from "../../components/card/Card";
 import ClientCard from "../../components/clientCard/ClientCard";
@@ -8,9 +9,13 @@ import Footer from "../../components/footer/Footer";
 import ProductDesc from "../../components/productDesc/ProductDesc";
 import RateBar from "../../components/rateBar/RateBar";
 import Title from "../../components/title/Title";
+import { ProductsData } from "../../contexts/context";
 import styles from "./details.module.scss";
 
 export default function Details() {
+   const { products } = useContext(ProductsData);
+   const { id } = useParams();
+   const currentProduct = products.find((product) => product.id === Number(id));
    return (
       <>
          <div className={styles.container}>
@@ -18,24 +23,23 @@ export default function Details() {
                <div>
                   <img
                      className={styles.productImg}
-                     src="./assets/images/details.png"
+                     src={currentProduct.image}
                      alt=""
                   />
                </div>
                <div className={styles.productInfo}>
                   <h3 className={styles.productTitle}>
-                     SEEDRA Corn - Bodacious Hybrid Seeds for Indoor and Outdoor
-                     Planting
+                     {currentProduct.title}
                   </h3>
                   <div className={styles.productType}>
-                     <img src="./assets/images/category1.svg" alt="" />
-                     VEGETABLES
+                     <img src="/assets//images/category1.svg" alt="" />
+                     {currentProduct.category}
                   </div>
-                  <DetailTable />
+                  <DetailTable price={currentProduct.price} />
                </div>
             </div>
             <Title mb={24}>Product information.</Title>
-            <ProductDesc />
+            <ProductDesc>{currentProduct.description}</ProductDesc>
             <Title mb={23}>Frequently asked questions.</Title>
             <Faq />
             <div className={styles.titleWrapper}>
@@ -43,14 +47,34 @@ export default function Details() {
                <Button bg={"light"}>Make review</Button>
             </div>
             <div className={styles.reviewWrapper}>
-               <RateBar />
+               <RateBar rating={currentProduct.rating} />
                <ClientCard />
             </div>
             <Title mb={40}>Related products.</Title>
             <div className={styles.cardsWrapper}>
-               <Card />
-               <Card />
-               <Card />
+               {products
+                  .filter(
+                     (productItem) =>
+                        productItem.category === currentProduct.category
+                  )
+                  .reduce((acc, curr) => {
+                     if (acc.length < 3 && curr.id != currentProduct.id) {
+                        return [...acc, curr];
+                     }
+                     return acc;
+                  }, [])
+                  .map((product) => (
+                     <Card
+                        key={product.id}
+                        id={product.id}
+                        title={product.title}
+                        price={product.price}
+                        category={product.category}
+                        img={product.image}
+                        rate={product.rating.rate}
+                        voteNumber={product.rating.count}
+                     />
+                  ))}
             </div>
          </div>
          <Footer />

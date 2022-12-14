@@ -39,12 +39,22 @@
    color: #70737c;
 }
 
+.category {
+   display: inline-block;
+   background-color: #d0d0d0;
+   padding: 5px 10px;
+   font-size: 14px;
+   color: #359740;
+   border-radius: 10px;
+}
+
 .productDesc {
    font-weight: 500;
    font-size: 16px;
    line-height: 25px;
    letter-spacing: -0.04em;
    color: #1f2533;
+   cursor: pointer;
 }
 
 .footer {
@@ -71,4 +81,8 @@
    img {
       max-width: 100%;
    }
+}
+
+.imgBox {
+   min-height: 218px;
 }

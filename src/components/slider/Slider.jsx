@@ -6,18 +6,18 @@ export default function Slider() {
       <div>
          <div className={styles.card}>
             <div className={styles.heading}>
-               <img src="./assets/images/client-img.png" alt="" />
+               <img src="/assets/images/client-img.png" alt="" />
                <div className={styles.clientInfo}>
                   <p className={styles.clientName}>Carla Samantoes-Diego</p>
                   <span className={styles.date}>12.09.2021</span>
                </div>
             </div>
             <div className={styles.rate}>
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
             </div>
             <div className={styles.comment}>
                SEEDRA Spinach Seeds - contains 600 seeds in 2 Packs and

@@ -1,25 +1,22 @@
 import React from "react";
+import { useRateStars } from "../../hooks/useRateStars";
 import styles from "./rateBar.module.scss";
 
-export default function RateBar() {
+export default function RateBar({ rating }) {
+   const stars = useRateStars(rating.rate);
+
    return (
       <div className={styles.wrapper}>
          <div className={styles.heading}>
-            <h3 className={styles.everageRate}>4,1</h3>
+            <h3 className={styles.everageRate}>{rating.rate}</h3>
             <div className={styles.reviews}>
-               <span>124 reviews</span>
-               <div className={styles.iconRates}>
-                  <img src="./assets/images/icon-star.svg" alt="" />
-                  <img src="./assets/images/icon-star.svg" alt="" />
-                  <img src="./assets/images/icon-star.svg" alt="" />
-                  <img src="./assets/images/icon-star.svg" alt="" />
-                  <img src="./assets/images/icon-star.svg" alt="" />
-               </div>
+               <span>{rating.count} reviews</span>
+               <div className={styles.iconRates}>{stars}</div>
             </div>
          </div>
          <div className={styles.barRow}>
             <span className={styles.starNumber}>5</span>
-            <img src="./assets/images/icon-star.svg" alt="" />
+            <img src="/assets/images/icon-star.svg" alt="" />
             <div className={styles.line}>
                <span className={styles.process} style={{ width: "81%" }}></span>
             </div>
@@ -27,7 +24,7 @@ export default function RateBar() {
          </div>
          <div className={styles.barRow}>
             <span className={styles.starNumber}>4</span>
-            <img src="./assets/images/icon-star.svg" alt="" />
+            <img src="/assets/images/icon-star.svg" alt="" />
             <div className={styles.line}>
                <span className={styles.process} style={{ width: "45%" }}></span>
             </div>
@@ -35,7 +32,7 @@ export default function RateBar() {
          </div>
          <div className={styles.barRow}>
             <span className={styles.starNumber}>3</span>
-            <img src="./assets/images/icon-star.svg" alt="" />
+            <img src="/assets/images/icon-star.svg" alt="" />
             <div className={styles.line}>
                <span className={styles.process} style={{ width: "32%" }}></span>
             </div>
@@ -43,7 +40,7 @@ export default function RateBar() {
          </div>
          <div className={styles.barRow}>
             <span className={styles.starNumber}>2</span>
-            <img src="./assets/images/icon-star.svg" alt="" />
+            <img src="/assets/images/icon-star.svg" alt="" />
             <div className={styles.line}>
                <span className={styles.process} style={{ width: "1%" }}></span>
             </div>
@@ -51,7 +48,7 @@ export default function RateBar() {
          </div>
          <div className={styles.barRow}>
             <span className={styles.starNumber}>1</span>
-            <img src="./assets/images/icon-star.svg" alt="" />
+            <img src="/assets/images/icon-star.svg" alt="" />
             <div className={styles.line}>
                <span className={styles.process} style={{ width: "1%" }}></span>
             </div>

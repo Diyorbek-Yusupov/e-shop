@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./home.module.scss";
 import BlogBanner from "../../components/blogBanner/BlogBanner";
 import Button from "../../components/button/Button";
@@ -10,12 +10,27 @@ import SubBanner from "../../components/subBanner/SubBanner";
 import Title from "../../components/title/Title";
 import About from "../../components/about/About";
 import Footer from "../../components/footer/Footer";
+import { ProductsData } from "../../contexts/context";
 
-export default function Home() {
+function Home() {
+   const { products } = useContext(ProductsData);
+
+   const randomNumber = (min, max) => {
+      return Math.floor(Math.random() * (max - min)) + min;
+   };
+
+   const index = randomNumber(0, 13);
+
    return (
       <>
          <div className={styles.container}>
-            <Showcase />
+            <Showcase
+               img={products[index].image}
+               title={products[index].title}
+               description={products[index].description}
+               price={products[index].price}
+               id={products[index].id}
+            />
             <SubBanner />
             <div className={styles.titleWrapper}>
                <Title>Our products.</Title>
@@ -23,12 +38,18 @@ export default function Home() {
             </div>
             <Categories />
             <div className={styles.cardWrapper}>
-               <Card />
-               <Card />
-               <Card />
-               <Card />
-               <Card />
-               <Card />
+               {products.slice(0, 6).map((product) => (
+                  <Card
+                     key={product.id}
+                     id={product.id}
+                     title={product.title}
+                     price={product.price}
+                     category={product.category}
+                     img={product.image}
+                     rate={product.rating.rate}
+                     voteNumber={product.rating.count}
+                  />
+               ))}
             </div>
             <div className={styles.titleWrapper}>
                <Title>Our blog.</Title>
@@ -41,7 +62,7 @@ export default function Home() {
                   desc={
                      "In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
                   }
-                  img={"./assets/images/blogBanner1.png"}
+                  img={"/assets//images/blogBanner1.png"}
                />
                <BlogBanner
                   time={"12.09.2021"}
@@ -49,17 +70,17 @@ export default function Home() {
                   desc={
                      "In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
                   }
-                  img={"./assets/images/blogBanner2.png"}
+                  img={"/assets//images/blogBanner2.png"}
                />
                <BlogBanner
                   time={"12.09.2021"}
                   title={"How to plant spinach correctly in winter"}
-                  img={"./assets/images/blogBanner3.png"}
+                  img={"/assets//images/blogBanner3.png"}
                />
                <BlogBanner
                   time={"12.09.2021"}
                   title={"How to plant spinach correctly in winter"}
-                  img={"./assets/images/blogBanner3.png"}
+                  img={"/assets//images/blogBanner3.png"}
                />
             </div>
             <Title mb={44} align="center">
@@ -72,3 +93,4 @@ export default function Home() {
       </>
    );
 }
+export default Home;

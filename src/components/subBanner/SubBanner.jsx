@@ -10,12 +10,12 @@ export default function SubBanner() {
          </p>
          <img
             className={styles.bgLeft}
-            src="./assets/images/subbaner-left-bg.png"
+            src="/assets/images/subbaner-left-bg.png"
             alt=""
          />
          <img
             className={styles.bgRight}
-            src="./assets/images/subbanner-right-bg.png"
+            src="/assets/images/subbanner-right-bg.png"
             alt=""
          />
       </div>

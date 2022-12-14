@@ -6,7 +6,7 @@ export default function ClientCard() {
       <div className={styles.wrapper}>
          <div className={styles.heading}>
             <div className={styles.clientInfo}>
-               <img src="./assets/images/client-img.png" alt="" />
+               <img src="/assets/images/client-img.png" alt="" />
                <div>
                   <h4 className={styles.clientName}>Carla Samantoes-Diego</h4>
                   <p className={styles.clientDesc}>
@@ -15,11 +15,11 @@ export default function ClientCard() {
                </div>
             </div>
             <div className={styles.stars}>
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
-               <img src="./assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
+               <img src="/assets/images/icon-star.svg" alt="" />
             </div>
          </div>
          <p className={styles.comment}>
@@ -33,7 +33,7 @@ export default function ClientCard() {
                <span>Size</span>2 PACK
             </p>
             <div className={styles.verify}>
-               <img src="./assets/images/icon-checked.svg" alt="" />
+               <img src="/assets/images/icon-checked.svg" alt="" />
                VERIFIED
             </div>
          </div>

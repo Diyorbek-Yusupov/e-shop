@@ -1,48 +1,56 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../button/Button";
 import styles from "./showcase.module.scss";
 
-export default function Showcase() {
+export default function Showcase({ img, title, description, price, id }) {
+   const textReducer = (text, maxCharNum) => {
+      let sliced = text.slice(0, maxCharNum);
+      if (sliced.length < text.length) return sliced + " . . .";
+      return sliced;
+   };
    return (
       <div className={styles.showcase}>
          <div className={styles.contentWrapper}>
             <div className={styles.content}>
-               <h2 className={styles.title}>
-                  SEEDRA Basil Seeds for Indoor and Outdoor Planting
+               <h2 className={styles.title} title={title}>
+                  {textReducer(title, 40)}
                </h2>
-               <p className={styles.desc}>
-                  Be sure of our quality - the freshest batches of this season.
-                  Non-GMO, Heirloom - our seeds were tested and have the best
-                  germination ratings. Your easy growing experience is our
-                  guarantee
+               <p className={styles.desc} title={description}>
+                  {textReducer(description, 200)}
                </p>
                <div className={styles.productInfo}>
                   <span className={styles.icon}>
                      <img
                         className={styles.fireIcon}
-                        src="./assets/images/icon-fire.svg"
+                        src="/assets/images/icon-fire.svg"
                         alt=""
                      />
                   </span>
-                  <h3 className={styles.productPrice}>$12.56</h3>
-                  <h5 className={styles.deprecatedPrice}>$15.56</h5>
+                  <h3 className={styles.productPrice}>${price}</h3>
+                  <h5 className={styles.deprecatedPrice}>
+                     ${Math.round((price * 0.1 + price) * 100) / 100}
+                  </h5>
                </div>
                <div className={styles.btns}>
                   <Button bg="green">Add to card</Button>
-                  <Button bg="light">Discover</Button>
+                  <Link to={`/products/${id}`}>
+                     <Button bg="light">Discover</Button>
+                  </Link>
                </div>
             </div>
             <div className={styles.images}>
                <img
                   className={styles.productImg}
-                  src="./assets/images/showcase-img.png"
+                  // "/assets/images/showcase-img.png"
+                  src={img}
                   alt=""
                />
             </div>
          </div>
          <img
             className={styles.productBg}
-            src="./assets/images/showcase-bg.png"
+            src="/assets/images/showcase-bg.png"
             alt=""
          />
       </div>

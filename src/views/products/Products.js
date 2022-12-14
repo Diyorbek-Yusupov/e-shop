@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../../components/card/Card";
 import Categories from "../../components/categories/Categories";
 import Footer from "../../components/footer/Footer";
+import { ProductsData } from "../../contexts/context";
 import styles from "./products.module.scss";
 
 export default function Products() {
+   const { products } = useContext(ProductsData);
    return (
       <>
          <div className={styles.container}>
@@ -17,7 +19,7 @@ export default function Products() {
                   className={styles.searchGroup + " " + styles.searchText}
                >
                   <button className={styles.searchBtn}>
-                     <img src="./assets/images/icon-search.svg" alt="" />
+                     <img src="/assets//images/icon-search.svg" alt="" />
                   </button>
                   <input
                      className={styles.searchInput}
@@ -36,9 +38,18 @@ export default function Products() {
             </div>
             <Categories />
             <div className={styles.cardWrapper}>
-               <Card />
-               <Card />
-               <Card />
+               {products.map((product) => (
+                  <Card
+                     key={product.id}
+                     id={product.id}
+                     title={product.title}
+                     price={product.price}
+                     category={product.category}
+                     img={product.image}
+                     rate={product.rating.rate}
+                     voteNumber={product.rating.count}
+                  />
+               ))}
             </div>
          </div>
          <Footer />

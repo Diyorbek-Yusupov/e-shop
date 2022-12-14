@@ -46,7 +46,7 @@ export default function Faq() {
          <form className={styles.form}>
             <img
                className={styles.formBg}
-               src="./assets/images/form-bg.png"
+               src="/assets/images/form-bg.png"
                alt=""
             />
             <h3 className={styles.formTitle}>Didn’t find answer?</h3>

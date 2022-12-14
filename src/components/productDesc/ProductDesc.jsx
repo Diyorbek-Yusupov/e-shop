@@ -1,22 +1,11 @@
 import React from "react";
 import styles from "./productDesc.module.scss";
 
-export default function ProductDesc() {
+export default function ProductDesc({ children }) {
    return (
       <div className={styles.wrapper}>
          <ul className={styles.description}>
-            <li className={styles.descriptionItem}>
-               EEDRA Cilantro Seeds - contains 300 seeds in 1 Pack and
-               professional instructions created by PhD Helga George
-            </li>
-            <li className={styles.descriptionItem}>
-               EEDRA Cilantro Seeds - contains 300 seeds in 1 Pack and
-               professional instructions created by PhD Helga George
-            </li>
-            <li className={styles.descriptionItem}>
-               EEDRA Cilantro Seeds - contains 300 seeds in 1 Pack and
-               professional instructions created by PhD Helga George
-            </li>
+            <li className={styles.descriptionItem}>{children}</li>
          </ul>
          <div className={styles.address}>
             <div className={styles.addressItem}>

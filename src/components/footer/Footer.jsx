@@ -10,7 +10,7 @@ export default function Footer() {
                <a href="">ABOUT SEEDRA</a>
                <a href="">OUR BLOG</a>
                <a className={styles.logo} href="">
-                  <img src="./assets/images/logo.svg" alt="" />
+                  <img src="/assets/images/logo.svg" alt="" />
                </a>
                <a href="">Terms&Conditions</a>
                <a href="">Privacy Policy</a>
@@ -18,10 +18,10 @@ export default function Footer() {
             <div className={styles.bottom}>
                <div className={styles.socials}>
                   <a href="">
-                     <img src="./assets/images/footer-insta.svg" alt="" />
+                     <img src="/assets/images/footer-insta.svg" alt="" />
                   </a>
                   <a href="">
-                     <img src="./assets/images/footer-facebook.svg" alt="" />
+                     <img src="/assets/images/footer-facebook.svg" alt="" />
                   </a>
                </div>
                <p className={styles.copyright}>All rights reserved</p>

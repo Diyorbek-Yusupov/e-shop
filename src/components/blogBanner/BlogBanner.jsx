@@ -7,7 +7,7 @@ export default function BlogBanner({ time, title, desc, img }) {
       <div className={styles.blogBanner}>
          <div className={styles.content}>
             <div className={styles.time}>
-               <img src="./assets/images/icon-clock.svg" alt="" />
+               <img src="/assets/images/icon-clock.svg" alt="" />
                <span className={styles.date}>{time}</span>
             </div>
             <h3 className={styles.title}>{title}</h3>
