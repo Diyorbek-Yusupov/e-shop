@@ -13,12 +13,12 @@ import Products from "./views/products/Products";
 function App() {
    const [products, setProducts] = useState([]);
    useEffect(() => {
-      if (!products.length)
-         axios
-            .get("https://fakestoreapi.com/products")
-            .then((response) => setProducts(response.data))
-            .catch((data) => console.error(data.message));
-   }, []);
+      if (!products.length) console.log("useEffect");
+      axios
+         .get("https://fakestoreapi.com/products")
+         .then((response) => setProducts(response.data))
+         .catch((data) => console.error(data.message));
+   }, [null]);
    return (
       <ProductsData.Provider value={{ products, setProducts }}>
          <BrowserRouter>
