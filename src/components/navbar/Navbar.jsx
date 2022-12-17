@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { ProductsData } from "../../contexts/context";
+import SwitchButton from "../switchButton/SwitchButton";
 import styles from "./navbar.module.scss";
 
 export default function Navbar() {
+   const { isDarkMode } = useContext(ProductsData);
    const [navIsOpen, setNavIsOpen] = useState(false);
 
    const togleNavbar = () => setNavIsOpen((prevState) => !prevState);
@@ -11,7 +14,11 @@ export default function Navbar() {
          {navIsOpen && (
             <div className={styles.overlay} onClick={togleNavbar}></div>
          )}
-         <div className={styles.navbar}>
+         <div
+            className={`${isDarkMode ? styles.isDarkMode : ""} ${
+               styles.navbar
+            }`}
+         >
             <div className={styles.container}>
                <Link to={"/"} className={styles.logo} href="">
                   <img src="/assets/images/logo.svg" alt="" />
@@ -55,9 +62,7 @@ export default function Navbar() {
                   </form>
                </ul>
                <div className={styles.btns}>
-                  <button>
-                     <img src="/assets/images/icon-like.svg" alt="" />
-                  </button>
+                  <SwitchButton />
                   <button>
                      <img src="/assets/images/icon-cart.svg" alt="" />
                   </button>

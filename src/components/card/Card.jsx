@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ProductsData } from "../../contexts/context";
 import { useRateStars } from "../../hooks/useRateStars";
 import styles from "./card.module.scss";
 
 export default function Card(props) {
+   const { isDarkMode } = useContext(ProductsData);
    const { img, title, rate, voteNumber, price, category, id } = props;
    const stars = useRateStars(rate);
    let slicedTitle = title.slice(0, 30);
-
    if (slicedTitle.length < title.length) slicedTitle += " . . .";
 
    return (
-      <div className={styles.card}>
+      <div className={`${isDarkMode ? styles.darkMode : ""} ${styles.card}`}>
          <button className={styles.likeBtn}>
             <img src="/assets/images/icon-like.svg" alt="" />
          </button>

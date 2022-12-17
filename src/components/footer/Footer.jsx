@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductsData } from "../../contexts/context";
 import styles from "./footer.module.scss";
 
 export default function Footer() {
+   const { isDarkMode } = useContext(ProductsData);
    return (
-      <div className={styles.footer}>
+      <div className={`${isDarkMode ? styles.darkMode : ""} ${styles.footer}`}>
          <div className={styles.container}>
             <div className={styles.links}>
                <a href="">ALL PRODUCTS</a>

@@ -1,3 +1,10 @@
+.footer {
+   &.darkMode {
+      background-color: #222222;
+      box-shadow: 0px 4px 12px rgba(0, 4, 129, 0.25);
+   }
+}
+
 .container {
    padding: 25px 10px;
    max-width: 1110px;

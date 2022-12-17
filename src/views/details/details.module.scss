@@ -4,6 +4,13 @@
    align-items: center;
 }
 
+.darkMode {
+   background-color: black;
+   * {
+      color: rgb(230, 230, 230) !important;
+   }
+}
+
 .container {
    padding: 25px 10px;
    max-width: 1110px;

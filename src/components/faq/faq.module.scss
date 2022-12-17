@@ -9,6 +9,7 @@
 .wrapper {
    display: grid;
    grid-template-columns: 2fr 1fr;
+   grid-template-columns: 2fr 1fr;
    gap: 40px;
 
    @media only screen and (max-width: 1020px) {
@@ -28,6 +29,15 @@
    background: #eaf1eb;
    border-radius: 12px;
    max-height: 506px;
+   &.darkMode {
+      background: #1a1a33;
+      * {
+         color: #efefef;
+      }
+      textarea {
+         background-color: #1a1a33;
+      }
+   }
 }
 
 .formBg {

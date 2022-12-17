@@ -19,6 +19,10 @@
    background-color: #fff;
    color: #359740;
    border: 1px solid #efefef;
+   &.darkMode {
+      background-color: rgb(13, 27, 65);
+      color: #fff;
+   }
 }
 
 .green {

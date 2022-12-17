@@ -1,8 +1,24 @@
+.home {
+   &.darkMode {
+      * {
+         color: rgb(230, 230, 230);
+      }
+      background-color: black;
+   }
+}
+
 .container {
    padding: 25px 10px;
    max-width: 1110px;
    margin-right: auto;
    margin-left: auto;
+
+   &.isDarkMode {
+      background-color: black;
+      * {
+         color: rgba(255, 255, 255, 0.936);
+      }
+   }
 
    @media only screen and (max-width: 1020px) {
       max-width: 720px;

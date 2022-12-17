@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ProductsData } from "../../contexts/context";
 import styles from "./accordion.module.scss";
 
 /*    
@@ -13,12 +14,14 @@ import styles from "./accordion.module.scss";
 */
 
 export default function Accordion({ children, title }) {
+   const { isDarkMode } = useContext(ProductsData);
    const [isOpen, setIsOpen] = useState(false);
    return (
       <div className={styles.main}>
          <div className={styles[`label-forFAQ`]}>
             <div
                className={
+                  `${isDarkMode ? styles.darkMode + " " : ""} ` +
                   styles[`label-forFAQ_text`] +
                   (isOpen ? " " + styles[`label-forFAQ_text--open`] : "")
                }

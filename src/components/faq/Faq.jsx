@@ -3,7 +3,7 @@ import Accordion from "../accordion/Accordion";
 import Button from "../button/Button";
 import styles from "./faq.module.scss";
 
-export default function Faq() {
+export default function Faq({ isDarkMode }) {
    return (
       <div className={styles.wrapper}>
          <div className={styles.content}>
@@ -43,7 +43,9 @@ export default function Faq() {
                </p>
             </Accordion>
          </div>
-         <form className={styles.form}>
+         <form
+            className={`${isDarkMode ? styles.darkMode : ""} ${styles.form}`}
+         >
             <img
                className={styles.formBg}
                src="/assets/images/form-bg.png"

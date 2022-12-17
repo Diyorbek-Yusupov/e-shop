@@ -13,11 +13,11 @@ import { ProductsData } from "../../contexts/context";
 import styles from "./details.module.scss";
 
 export default function Details() {
-   const { products } = useContext(ProductsData);
+   const { products, isDarkMode } = useContext(ProductsData);
    const { id } = useParams();
    const currentProduct = products.find((product) => product.id === Number(id));
    return (
-      <>
+      <div className={isDarkMode ? styles.darkMode : ""}>
          <div className={styles.container}>
             <div className={styles.showcase}>
                <div>
@@ -41,7 +41,7 @@ export default function Details() {
             <Title mb={24}>Product information.</Title>
             <ProductDesc>{currentProduct.description}</ProductDesc>
             <Title mb={23}>Frequently asked questions.</Title>
-            <Faq />
+            <Faq isDarkMode={isDarkMode} />
             <div className={styles.titleWrapper}>
                <Title>Customer reviews.</Title>
                <Button bg={"light"}>Make review</Button>
@@ -78,6 +78,6 @@ export default function Details() {
             </div>
          </div>
          <Footer />
-      </>
+      </div>
    );
 }

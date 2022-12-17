@@ -6,9 +6,9 @@ import { ProductsData } from "../../contexts/context";
 import styles from "./products.module.scss";
 
 export default function Products() {
-   const { products } = useContext(ProductsData);
+   const { products, isDarkMode } = useContext(ProductsData);
    return (
-      <>
+      <div className={isDarkMode ? styles.darkMode : ""}>
          <div className={styles.container}>
             <div className={styles.heading}>
                <form
@@ -53,6 +53,6 @@ export default function Products() {
             </div>
          </div>
          <Footer />
-      </>
+      </div>
    );
 }

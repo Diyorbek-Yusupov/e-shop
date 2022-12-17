@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./blogBanner.module.scss";
 import Button from "../button/Button";
 
-export default function BlogBanner({ time, title, desc, img }) {
+export default function BlogBanner({ time, title, desc, img, isDarkMode }) {
    return (
-      <div className={styles.blogBanner}>
+      <div
+         className={`${isDarkMode ? styles.darkMode : ""} ${styles.blogBanner}`}
+      >
          <div className={styles.content}>
             <div className={styles.time}>
                <img src="/assets/images/icon-clock.svg" alt="" />

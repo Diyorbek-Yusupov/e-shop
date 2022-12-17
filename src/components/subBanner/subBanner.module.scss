@@ -5,6 +5,10 @@
    border-radius: 12px;
    overflow: hidden;
    padding: 23px;
+
+   &.darkMode {
+      background: #1a1a33;
+   }
    img {
       position: absolute;
       top: 0;

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductsData } from "../../contexts/context";
 import styles from "./slider.module.scss";
 
 export default function Slider() {
+   const { isDarkMode } = useContext(ProductsData);
    return (
       <div>
-         <div className={styles.card}>
+         <div className={`${isDarkMode ? styles.darkMode : ""} ${styles.card}`}>
             <div className={styles.heading}>
                <img src="/assets/images/client-img.png" alt="" />
                <div className={styles.clientInfo}>

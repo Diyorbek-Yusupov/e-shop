@@ -3,14 +3,23 @@ import { Link } from "react-router-dom";
 import Button from "../button/Button";
 import styles from "./showcase.module.scss";
 
-export default function Showcase({ img, title, description, price, id }) {
+export default function Showcase({
+   img,
+   title,
+   description,
+   price,
+   id,
+   isDarkMode,
+}) {
    const textReducer = (text, maxCharNum) => {
       let sliced = text.slice(0, maxCharNum);
       if (sliced.length < text.length) return sliced + " . . .";
       return sliced;
    };
    return (
-      <div className={styles.showcase}>
+      <div
+         className={`${isDarkMode ? styles.darkMode : ""} ${styles.showcase}`}
+      >
          <div className={styles.contentWrapper}>
             <div className={styles.content}>
                <h2 className={styles.title} title={title}>

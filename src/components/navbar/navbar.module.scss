@@ -5,6 +5,19 @@
    box-shadow: 0px 4px 12px rgba(207, 207, 207, 0.25);
    z-index: 999999;
    background-color: #fff;
+   &.isDarkMode {
+      background-color: #222222;
+      box-shadow: 0px 4px 12px rgba(0, 4, 129, 0.25);
+
+      .navigation,
+      .form-input {
+         color: #fff;
+      }
+      .content {
+         background-color: #222222;
+         box-shadow: unset;
+      }
+   }
 }
 
 .container {
@@ -16,7 +29,7 @@
    align-items: center;
    justify-content: space-between;
 
-   @media only screen and (max-width: 1020px) {
+   @media only screen and (max-width: 1040px) {
       max-width: 720px;
    }
 }
@@ -40,14 +53,14 @@ ul {
 .content {
    gap: 35px;
    color: #70737c;
-   @media only screen and (max-width: 1020px) {
+   @media only screen and (max-width: 1040px) {
       margin-top: 78px;
       padding: 10px;
       position: fixed;
       flex-direction: column;
       justify-content: center;
-      height: calc(100% - 82px);
-      top: 0;
+      height: calc(100% - 78px);
+      top: -1px;
       right: 0;
       background-color: #fff;
       z-index: initial;
@@ -111,6 +124,8 @@ ul {
 .form-input {
    border: none;
    outline: none;
+   background-color: inherit;
+   color: inherit;
 }
 
 .nav__btn {

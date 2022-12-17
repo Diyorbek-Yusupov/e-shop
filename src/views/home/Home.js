@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./home.module.scss";
 import BlogBanner from "../../components/blogBanner/BlogBanner";
 import Button from "../../components/button/Button";
@@ -13,25 +13,33 @@ import Footer from "../../components/footer/Footer";
 import { ProductsData } from "../../contexts/context";
 
 function Home() {
-   const { products } = useContext(ProductsData);
+   const [bannerProductIndex, setBannerProductIndex] = useState(null);
+   const { products, isDarkMode } = useContext(ProductsData);
 
    const randomNumber = (min, max) => {
       return Math.floor(Math.random() * (max - min)) + min;
    };
 
-   const index = randomNumber(0, 13);
+   useEffect(() => {
+      setBannerProductIndex(randomNumber(0, 13));
+   }, [null]);
 
    return (
-      <>
+      <div className={`${isDarkMode ? styles.darkMode : ""} ${styles.home}`}>
          <div className={styles.container}>
-            <Showcase
-               img={products[index].image}
-               title={products[index].title}
-               description={products[index].description}
-               price={products[index].price}
-               id={products[index].id}
-            />
-            <SubBanner />
+            {bannerProductIndex ? (
+               <Showcase
+                  img={products[bannerProductIndex].image}
+                  title={products[bannerProductIndex].title}
+                  description={products[bannerProductIndex].description}
+                  price={products[bannerProductIndex].price}
+                  id={products[bannerProductIndex].id}
+                  isDarkMode={isDarkMode}
+               />
+            ) : (
+               ""
+            )}
+            <SubBanner isDarkMode={isDarkMode} />
             <div className={styles.titleWrapper}>
                <Title>Our products.</Title>
                <Button bg={"light"}>Go to our blog</Button>
@@ -57,6 +65,7 @@ function Home() {
             </div>
             <div className={styles.blogBannerWrapper}>
                <BlogBanner
+                  isDarkMode={isDarkMode}
                   time={"12.09.2021"}
                   title={"How to plant spinach correctly in winter"}
                   desc={
@@ -65,6 +74,7 @@ function Home() {
                   img={"/assets//images/blogBanner1.png"}
                />
                <BlogBanner
+                  isDarkMode={isDarkMode}
                   time={"12.09.2021"}
                   title={"How to plant spinach correctly in winter"}
                   desc={
@@ -73,11 +83,13 @@ function Home() {
                   img={"/assets//images/blogBanner2.png"}
                />
                <BlogBanner
+                  isDarkMode={isDarkMode}
                   time={"12.09.2021"}
                   title={"How to plant spinach correctly in winter"}
                   img={"/assets//images/blogBanner3.png"}
                />
                <BlogBanner
+                  isDarkMode={isDarkMode}
                   time={"12.09.2021"}
                   title={"How to plant spinach correctly in winter"}
                   img={"/assets//images/blogBanner3.png"}
@@ -90,7 +102,7 @@ function Home() {
             <About />
          </div>
          <Footer />
-      </>
+      </div>
    );
 }
 export default Home;

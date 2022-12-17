@@ -5,6 +5,10 @@
    border-radius: 24px;
    overflow: hidden;
 
+   &.darkMode {
+      background: #1a1a33;
+   }
+
    @media only screen and (max-width: 600px) {
       padding: 15px;
    }
@@ -43,6 +47,8 @@
    @media only screen and (max-width: 1020px) {
       max-width: 100%;
       min-width: 220px;
+      max-height: 300px;
+      aspect-ratio: 1 / 1;
    }
 }
 

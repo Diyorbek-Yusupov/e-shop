@@ -12,15 +12,20 @@ import Products from "./views/products/Products";
 
 function App() {
    const [products, setProducts] = useState([]);
+   const [isDarkMode, setIsDarkMode] = useState(false);
+
    useEffect(() => {
-      if (!products.length) console.log("useEffect");
       axios
          .get("https://fakestoreapi.com/products")
          .then((response) => setProducts(response.data))
          .catch((data) => console.error(data.message));
+
+      return () => {
+         console.log("App will unmount");
+      };
    }, [null]);
    return (
-      <ProductsData.Provider value={{ products, setProducts }}>
+      <ProductsData.Provider value={{ products, isDarkMode, setIsDarkMode }}>
          <BrowserRouter>
             {products.length ? (
                <Routes>

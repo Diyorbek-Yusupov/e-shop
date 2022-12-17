@@ -1,0 +1,36 @@
+.input {
+   display: none;
+}
+
+.input:checked ~ .label > .button {
+   transform: translateX(18px) translateY(-2px) rotate(225deg);
+   &::after {
+      content: url(./icons/moon-solid.svg);
+   }
+}
+
+.label {
+   display: block;
+   width: 50px;
+   height: 25px;
+   background-color: #0000003e;
+   border-radius: 20px;
+   padding: 10px 5px;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+.button {
+   display: inline-block;
+   height: 25px;
+   width: 25px;
+   aspect-ratio: 1 / 1;
+   border-radius: 10px;
+   color: #f8f8ff;
+   transform: translateY(2px) rotate(0deg);
+   transition: transform 1s;
+   &::after {
+      content: url(./icons/sun-solid.svg);
+   }
+}

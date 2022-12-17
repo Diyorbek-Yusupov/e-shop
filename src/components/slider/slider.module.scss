@@ -4,6 +4,10 @@
    box-shadow: 0px 4px 21px rgba(209, 209, 209, 0.25);
    border-radius: 12px;
    padding: 34px;
+
+   &.darkMode {
+      background: #1a1a33;
+   }
 }
 
 .heading {

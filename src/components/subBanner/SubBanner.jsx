@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./subBanner.module.scss";
 
-export default function SubBanner() {
+export default function SubBanner({ isDarkMode }) {
    return (
-      <div className={styles.subBanner}>
+      <div
+         className={`${isDarkMode ? styles.darkMode : ""} ${styles.subBanner}`}
+      >
          <h3 className={styles.title}>We sell seeds </h3>
          <p className={styles.text}>
             that always sprout and gardening supplies which never break
