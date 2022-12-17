@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import Button from "../../components/button/Button";
 import Card from "../../components/card/Card";
 import ClientCard from "../../components/clientCard/ClientCard";
@@ -13,9 +13,12 @@ import { ProductsData } from "../../contexts/context";
 import styles from "./details.module.scss";
 
 export default function Details() {
-   const { products, isDarkMode } = useContext(ProductsData);
+   const { products, isDarkMode, isLoggedIn } = useContext(ProductsData);
    const { id } = useParams();
    const currentProduct = products.find((product) => product.id === Number(id));
+   if (!isLoggedIn) {
+      return <Navigate to={"/sign-in"} />;
+   }
    return (
       <div className={isDarkMode ? styles.darkMode : ""}>
          <div className={styles.container}>
@@ -58,7 +61,7 @@ export default function Details() {
                         productItem.category === currentProduct.category
                   )
                   .reduce((acc, curr) => {
-                     if (acc.length < 3 && curr.id != currentProduct.id) {
+                     if (acc.length < 3 && curr.id !== currentProduct.id) {
                         return [...acc, curr];
                      }
                      return acc;

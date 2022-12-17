@@ -11,10 +11,11 @@ import Title from "../../components/title/Title";
 import About from "../../components/about/About";
 import Footer from "../../components/footer/Footer";
 import { ProductsData } from "../../contexts/context";
+import { Navigate } from "react-router-dom";
 
 function Home() {
    const [bannerProductIndex, setBannerProductIndex] = useState(null);
-   const { products, isDarkMode } = useContext(ProductsData);
+   const { products, isDarkMode, isLoggedIn } = useContext(ProductsData);
 
    const randomNumber = (min, max) => {
       return Math.floor(Math.random() * (max - min)) + min;
@@ -23,6 +24,10 @@ function Home() {
    useEffect(() => {
       setBannerProductIndex(randomNumber(0, 13));
    }, [null]);
+
+   if (!isLoggedIn) {
+      return <Navigate to={"/sign-in"} />;
+   }
 
    return (
       <div className={`${isDarkMode ? styles.darkMode : ""} ${styles.home}`}>

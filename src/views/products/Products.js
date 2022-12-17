@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Navigate } from "react-router-dom";
 import Card from "../../components/card/Card";
 import Categories from "../../components/categories/Categories";
 import Footer from "../../components/footer/Footer";
@@ -6,7 +7,10 @@ import { ProductsData } from "../../contexts/context";
 import styles from "./products.module.scss";
 
 export default function Products() {
-   const { products, isDarkMode } = useContext(ProductsData);
+   const { products, isDarkMode, isLoggedIn } = useContext(ProductsData);
+   if (!isLoggedIn) {
+      return <Navigate to={"/sign-in"} />;
+   }
    return (
       <div className={isDarkMode ? styles.darkMode : ""}>
          <div className={styles.container}>

@@ -12,7 +12,10 @@ export default function SwitchButton() {
             type="checkbox"
             id="toggleTheme"
             onChange={() => {
-               setIsDarkMode((prevVal) => !prevVal);
+               setIsDarkMode((prevVal) => {
+                  localStorage.setItem("isDarkMode", !prevVal);
+                  return !prevVal;
+               });
             }}
          />
          <label className={styles.label} htmlFor="toggleTheme">
